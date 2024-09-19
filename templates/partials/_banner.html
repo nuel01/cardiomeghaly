@@ -1,0 +1,70 @@
+
+<!-- Start Banner 
+    ============================================= -->
+<div class="banner-area responsive-auto-height text-small">
+    <div class="item shadow dark text-light bg-fixed" style="background-image: url(static/img/banner/4.jpg)">
+        <div class="box-table">
+            <div class="box-cell">
+                <div class="container">
+                    <div class="row">
+                        <div class="content double-items">
+
+                            <div class="col-md-7 col-sm-6">
+                                <h1 data-animation="animated slideInRight">Best care for your <span> Good health</span>
+                                </h1>
+                                <p data-animation="animated slideInUp">
+                                    To be in the fore-front of comprehensive health care delivery in Nigeria. To provide at affordable cost effective
+                                    integrated health care service designed to secure improvement in the physical, mental and socio-economic well being of
+                                    the people of Nigeria through Primary, Secondary and Tertiary health care services offered in a vertical combination
+                                    structure.
+                                </p>
+                                <!--<a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#">View
+                                    Details</a>-->%
+                            </div>
+
+                            <!-- Start Appoinment Form -->
+                            <div class="col-md-5 col-sm-6 appoinment">
+                                <div class="appoinment-box">
+                                    <div class="heading">
+                                        <h2>Doctor Login</h2>
+
+                                    </div>
+                                    
+                                    {% include 'partials/_alerts.html'%}
+                                    <form action="{% url 'login'%}" method="POST">
+                                        
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input class="form-control" id="username" name="username" placeholder="Username"
+                                                        type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input class="form-control" id="password" name="password" placeholder="Password" type="password">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <br>
+                                            <div class="col-md-12">
+                                                <button type="submit" name="submit" id="submit">
+                                                    Login <i class="fa fa-paper-plane"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- End Appoinment Form -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Banner -->

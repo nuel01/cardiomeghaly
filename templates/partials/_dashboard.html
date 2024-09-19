@@ -1,0 +1,78 @@
+<!-- Start Banner 
+    ============================================= -->
+
+    {% load staticfiles %}
+<div class="banner-area responsive-auto-height text-small">
+    <div class="item shadow dark text-light bg-fixed" style="background-color:aqua">
+        
+        <div class="box-table">
+            <div class="box-cell">
+                <div class="container">
+                    <div class="row">
+                        <div class="content double-items">
+
+                            <div class="col-md-7 col-sm-6">
+                                <h1 data-animation="animated slideInRight">Welcome Dr. <span>{{user.username}}</span>
+                                </h1>
+                                <p data-animation="animated slideInUp">
+                                To be a leading Center of excellence in every clinical, training and support service
+                                </p>
+                                <!--<a data-animation="animated slideInUp" class="btn btn-light border btn-md" href="#">View
+                                    Details</a>-->%
+                            </div>
+
+                            <!-- Start Appoinment Form -->
+                            <div class="col-md-5 col-sm-6 appoinment">
+                                <div class="appoinment-box">
+                                    <div class="heading">
+                                        <h2> Cardiomegaly Detection System </h2>
+                                        {% include 'partials/_alerts.html'%}
+                                    </div>
+
+                                   
+                                    <form action="" method="POST" action="">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input class="form-control" id="doctors_name" name="doctors_name"
+                                                        placeholder="{{user.username}}" type="text" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input class="form-control" id="patient_id" name="patient_id" placeholder="X-ray number" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" id="report" name="report" placeholder="Report"></textarea>
+                                                    
+                                                </div>
+                                                <!-- {% if prediction %}
+                                                        {{prediction}}
+                                                {% endif %} -->
+                                                <!-- <h5>{{results}}</h5> -->
+                                            </div>
+                                            <br>
+                                            
+                                            <br>
+                                            <div class="col-md-12">
+                                                <button type="submit" name="submit" id="submit">
+                                                    Detect <i class="fa fa-paper-plane"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- End Appoinment Form -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Banner -->

@@ -1,0 +1,286 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MediHub - Medical & Health Template">
+
+    <!-- ========== Page Title ========== -->
+    <title>OAUTHC - Medical & Health Hospital</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link   type="image/x-icon" rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link rel="stylesheet"  href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet"  href="{% static 'css/font-awesome.min.css'%}"/>
+    <link rel="stylesheet"  href="{% static 'css/flaticon-set.css'%}"/>
+    <link rel="stylesheet"  href="{% static 'css/magnific-popup.css'%}"/>
+    <link rel="stylesheet"  href="{% static 'css/owl.carousel.min.css'%}"/>
+    <link rel="stylesheet"  href="{% static 'css/owl.theme.default.min.css'%}" />
+    <link rel="stylesheet"  href="{% static 'css/animate.css'%}" />
+    <link rel="stylesheet"  href="{% static 'css/bootsnav.css'%}" />
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/responsive.css'%}" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5/html5shiv.min.js"></script>
+      <script src="assets/js/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600,700,800" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Preloader Start -->
+    <div class="se-pre-con"></div>
+    <!-- Preloader Ends -->
+    
+    <!-- Header 
+            ============================================= -->
+    <header id="home">
+    
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky bootsnav">
+    
+           
+            
+    
+            <div class="container">
+    
+               
+    
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img class="logo" alt="Logo" src="{% static 'img/logo.png' %}">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+    
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
+                        {% if user.is_authenticated %}
+                            <li>
+                                <a class="smooth-menu" href="{% url 'dashboard'%}"> Welcome Dr. {{user.username}}(Dashboard)</a>
+                            </li>
+                            <li>
+                                <a class="smooth-menu" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+                                <form action="{% url 'logout' %}" method="POST" id="logout"> 
+                                    {% csrf_token %}
+                                    <input type="hidden">
+                                </form>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a class="smooth-menu" href="#home">Home</a>
+                            </li>
+                            <li>
+                                <a class="smooth-menu" href="#departments">Departments</a>
+                            </li>
+                            <li>
+                                <a class="smooth-menu" href="#doctors">Doctors</a>
+                            </li>
+                            <!-- <li>
+                                <a class="smooth-menu" href="#gallery">Gallery</a>
+                            </li> -->
+                            <!-- <li>
+                                <a class="smooth-menu" href="#testimonials">Testimonials</a>
+                            </li> -->
+                            <li>
+                                <a class="smooth-menu" href="{% url 'admin:index'%}">Admin</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+    
+            
+    
+        </nav>
+        <!-- End Navigation -->
+    
+    </header>
+    <!-- End Header -->
+    {% block body_block %}
+
+    {% endblock %}
+    <!-- Start Footer 
+            ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- <div class="container">
+            <div class="row">
+                <div class="f-items default-padding">
+    
+                    <!- - Single Item - ->
+                    <div class="col-md-3 col-sm-6 equal-height item">
+                        <div class="f-item">
+                            <h4>About</h4>
+                            <p>
+                            The Obafemi Awolowo University Teaching Hospitals Complex is one of first generation of Teaching Hospitals established
+                            by the Federal Government to providequalitative health care delivery to its people.
+                            
+                            
+                            </p>
+                            <div class="opening-info">
+                                <h5>Opening Hours</h5>
+                                <ul>
+                                    <li> <span> Mon - Tues : </span>
+                                        <div class="pull-right"> 6.00 am - 10.00 pm </div>
+                                    </li>
+                                    <li> <span> Wednes - Thurs :</span>
+                                        <div class="pull-right"> 8.00 am - 6.00 pm </div>
+                                    </li>
+                                    <li> <span> Sun : </span>
+                                        <div class="pull-right closed"> Closed </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!- - End Single Item - ->
+                    <!- - Single Item - ->
+                    <div class="col-md-3 col-sm-6 equal-height item">
+                        <div class="f-item link">
+                            <h4>Our Depeartment</h4>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fas fa-arrow-right"></i> Medecine and Health</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-arrow-right"></i> Dental Care and Surgery</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-arrow-right"></i> Eye Treatment</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-arrow-right"></i> Children Chare</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-arrow-right"></i> Cardiomegaly</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-arrow-right"></i> Traumatology</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-arrow-right"></i> X-ray</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!- - End Single Item - ->
+                    <!- - Single Item - ->
+                    <div class="col-md-3 col-sm-6 equal-height item">
+                        <div class="f-item twitter-widget">
+                            <h4>Latest tweets</h4>
+                            <div class="twitter-item">
+                                <div class="twitter-content">
+                                    <p>
+                                        <a href="#">@OAUTHC_SHEKE</a> OAUTHC NURSES WEEK 2019<a target="_blank" href="#"></a>
+                                    </p>
+                                </div>
+                                <div class="twitter-context">
+                                    <i class="fab fa-twitter"></i><span class="twitter-date"> 05 day ago</span>
+                                </div>
+                            </div>
+                            <div class="twitter-item">
+                                <div class="twitter-content">
+                                    <p>
+                                        <a href="#">@OAUTHC_SHEKE</a> DOC] DOWNLOAD DR. (MRS.) C.O. SOWUNMI’S KEYNOTE SPEECH AT IMPACT LEADERSHIP CONFERENCE, OAUTHC 2018 HERE.<a target="_blank"
+                                            href="#"></a>
+                                    </p>
+                                </div>
+                                <div class="twitter-context">
+                                    <i class="fab fa-twitter"></i><span class="twitter-date"> 02 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!- - End Single Item - ->
+                    <!- - Single Item - ->
+                    
+                        <div class="col-md-3 col-sm-6 equal-height item">
+                        <div class="f-item contact">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-phone"></i>
+                                    <p>Phone <span>+2348152092751</span></p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <p>Email <span><a href="">oauthc_ileife@yahoo.com, info@oauthc.com</a></span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-map"></i>
+                                    <p>Office <span>Ilesa Road, PMB 5538 Ile-Ife, Osun State, Nigeria.</span></p>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    <!- -End Single Item - ->
+                </div>
+            </div>
+        </div>
+                    -->
+                    
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom bg-dark text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; Copyright 2019. All Rights Reserved by TP17/18/H/0982 </p>
+                    </div>
+                    <div class="col-md-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms of user</a>
+                            </li>
+                            <li>
+                                <a href="#">License</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer -->
+
+
+    <!-- jQuery Frameworks
+        ============================================= -->
+    <script src="{% static 'js/jquery-1.12.4.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/equal-height.min.js'%}"></script>
+    <script src="{% static 'js/jquery.appear.js'%}"></script>
+    <script src="{% static 'js/jquery.easing.min.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/modernizr.custom.13711.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/wow.min.js'%}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js'%}"></script>
+    <script src="{% static 'js/count-to.js'%}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static 'js/bootsnav.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+</body>

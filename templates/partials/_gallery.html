@@ -1,0 +1,111 @@
+<!-- Start Gallery
+    ============================================= -->
+    {% load staticfiles %}
+<div id="gallery" class="gallery-area bg-gray default-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="site-heading text-center">
+                    <h2>Our <span>Environment</span></h2>
+                    <p>
+                        A homely welcoming atmosphere, a supportive environment, good physical design, access to external areas and provision of
+                        facilities for recreation and leisure.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-items-area text-center">
+            <div class="row">
+                <div class="col-md-12 gallery-content">
+                    <div class="mix-item-menu text-center">
+                        <button class="active" data-filter="*">All</button>
+                        <button data-filter=".development">Development</button>
+                        <button data-filter=".consulting">Consulting</button>
+                        <button data-filter=".finance">Finance</button>
+                        <button data-filter=".branding">Branding</button>
+                        <button data-filter=".capital">Capital</button>
+                    </div>
+                    <!-- End Mixitup Nav-->
+
+                    <div class="row magnific-mix-gallery text-center masonary">
+                        <div id="portfolio-grid" class="gallery-items col-3">
+                            <!-- Single Item -->
+                            <div class="pf-item development capital">
+                                <div class="effect-box">
+                                    <img src="{% static 'img/gallery/1.jpg' %}" alt="thumb">
+                                    <div class="info">
+                                        <h4><a href="#">Large View</a></h4>
+                                        <a href="{% static 'img/gallery/1.jpg' %}" class="item popup-link"><i
+                                                class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                            <!-- Single Item -->
+                            <div class="pf-item consulting branding">
+                                <div class="effect-box">
+                                    <img src="{% static 'img/gallery/2.jpg' %}" alt="thumb">
+                                    <div class="info">
+                                        <h4><a href="#">Large View</a></h4>
+                                        <a href="{% static 'img/gallery/2.jpg' %}" class="item popup-link"><i
+                                                class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                            <!-- Single Item -->
+                            <div class="pf-item consulting finance">
+                                <div class="effect-box">
+                                    <img src="{% static 'img/gallery/3.jpg'%}" alt="thumb">
+                                    <div class="info">
+                                        <h4><a href="#">Large View</a></h4>
+                                        <a href="{% static 'img/gallery/3.jpg'%}" class="item popup-link"><i
+                                                class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                            <!-- Single Item -->
+                            <div class="pf-item finance">
+                                <div class="effect-box">
+                                    <img src="{% static 'img/gallery/4.jpg'%}" alt="thumb">
+                                    <div class="info">
+                                        <h4><a href="#">Large View</a></h4>
+                                        <a href="{% static 'img/gallery/4.jpg'%}" class="item popup-link"><i
+                                                class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                            <!-- Single Item -->
+                            <div class="pf-item capital development">
+                                <div class="effect-box">
+                                    <img src="{% static 'img/gallery/5.jpg'%}" alt="thumb">
+                                    <div class="info">
+                                        <h4><a href="#">Large View</a></h4>
+                                        <a href="{% static 'img/gallery/5.jpg'%}" class="item popup-link"><i
+                                                class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                            <!-- Single Item -->
+                            <div class="pf-item consulting branding">
+                                <div class="effect-box">
+                                    <img src="{% static 'img/gallery/6.jpg'%}" alt="thumb">
+                                    <div class="info">
+                                        <h4><a href="#">Large View</a></h4>
+                                        <a href="{% static 'img/gallery/6.jpg'%}" class="item popup-link"><i
+                                                class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Gallery -->
